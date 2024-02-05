@@ -1,22 +1,7 @@
-import 'package:flutter/material.dart';
-import 'package:note_app/views/widgets/Custom%20_text_fiels.dart';
-import 'package:note_app/views/widgets/constance.dart';
+import 'package:flutter/cupertino.dart';
 
+import 'Custom _text_fiels.dart';
 import 'Custom_button.dart';
-
-class AddBottomSheet extends StatelessWidget {
-  const AddBottomSheet({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16),
-      child: SingleChildScrollView(
-        child: AddNoteForm(),
-      ),
-    );
-  }
-}
 
 class AddNoteForm extends StatefulWidget {
   const AddNoteForm({
