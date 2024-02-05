@@ -8,7 +8,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
   await Hive.openBox('note_box');
-  Hive.registerAdapter(NoteModelAdapter())
+  Hive.registerAdapter(NoteModelAdapter());
   runApp(NotesApp());
 }
 
