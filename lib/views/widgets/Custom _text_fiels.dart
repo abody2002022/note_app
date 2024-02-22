@@ -5,13 +5,19 @@ import 'package:note_app/views/widgets/constance.dart';
 
 class CustomTextField extends StatelessWidget {
   const CustomTextField(
-      {super.key, required this.hint, this.maxLines = 1, this.onsaved});
+      {super.key,
+      required this.hint,
+      this.maxLines = 1,
+      this.onsaved,
+      this.onchanaged});
   final String hint;
   final int maxLines;
+  final Function(String)? onchanaged;
   final Function(String?)? onsaved;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      onChanged: onchanaged,
       onSaved: onsaved,
       validator: (value) {
         if (value?.isEmpty ?? true) {
@@ -24,7 +30,7 @@ class CustomTextField extends StatelessWidget {
       maxLines: maxLines,
       decoration: InputDecoration(
         hintText: hint,
-        enabledBorder: OutlineInputBorder(
+        border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8),
             borderSide: const BorderSide(color: Colors.white)),
       ),
