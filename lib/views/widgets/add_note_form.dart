@@ -8,6 +8,8 @@ import 'Custom _text_fiels.dart';
 import 'Custom_button.dart';
 import 'package:intl/intl.dart';
 
+import 'color_List_view.dart';
+
 class AddNoteForm extends StatefulWidget {
   const AddNoteForm({
     super.key,
@@ -50,6 +52,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
           SizedBox(
             height: 16,
           ),
+          colorListView(),
           BlocBuilder<AddNoteCubit, AddNoteState>(
             builder: (context, state) {
               return CustomButton(
