@@ -6,6 +6,7 @@ import 'package:note_app/Models/note_model.dart';
 
 import 'Custom _text_fiels.dart';
 import 'Custom_button.dart';
+import 'package:intl/intl.dart';
 
 class AddNoteForm extends StatefulWidget {
   const AddNoteForm({
@@ -55,6 +56,10 @@ class _AddNoteFormState extends State<AddNoteForm> {
                 ontap: () {
                   if (formkey.currentState!.validate()) {
                     formkey.currentState!.save();
+                    var currentDate = DateTime.now();
+                    var formattedCurrentDate =
+                        DateFormat.yMd().format(currentDate);
+
                     var noteModal = NoteModel(
                         title: title!,
                         subtitle: subtitle!,
